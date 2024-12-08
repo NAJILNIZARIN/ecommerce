@@ -1,10 +1,11 @@
-# test_proj_eco
+# Ecommerce application
 
 A new Flutter project.
 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
+Payment is a work in progress
 
 A few resources to get you started if this is your first Flutter project:
 

@@ -1,0 +1,50 @@
+plugins {
+    id "com.android.application"
+    id 'com.google.gms.google-services' // Firebase configuration
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin" // Flutter plugin
+}
+
+android {
+    namespace = "com.example.test_proj_eco"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    defaultConfig {
+        // Application ID
+        applicationId = "com.example.test_proj_eco"
+        // Minimum and target SDK versions
+        minSdk = 23
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+        // Enable MultiDex
+        multiDexEnabled true
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    buildTypes {
+        release {
+            // Signing configuration for release builds
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+dependencies {
+//    implementation 'com.razorpay:razorpay-pod:1.6.5' // (or the latest version)
+    implementation 'androidx.preference:preference:1.1.1'  // Add this if not present
+    implementation 'androidx.multidex:multidex:2.0.1' // Include MultiDex library
+}
+
+flutter {
+    source = "../.."
+}
